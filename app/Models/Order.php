@@ -9,10 +9,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     use HasFactory;
+    
+        protected $fillable = [
+            'customer_id',
+            'driver_id',
+            'status',
+            'total',
+        ];
 
-    protected $fillable = [
-        'customer_id', 'driver_id', 'status', 'total',
-    ];
 
     public function customer(): BelongsTo
     {
